@@ -10,8 +10,12 @@ dx = (2.1 - (-0.1) ) / 200;
 dy = (1 - 0) / 100;
 i = integrate( p, dx, dy);
 
+
 % calculate marginal pX and visualize
 Px = pXa(x);
 plot(x, Px,'r','LineWidth',1);
 xlabel('x', 'fontsize',18);
 ylabel('Marginal probability Px ', 'fontsize',18);
+hold on;
+Px_dummy = integrate(p, [], dy);
+plot(x, Px_dummy, 'xg');

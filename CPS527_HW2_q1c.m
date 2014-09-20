@@ -11,9 +11,9 @@ col_zero_ix = find(Px == 0);
 
 % calculate conditional probability
 Pygx = p ./ (ones(101, 1) * Px);
-Pygx(:, col_zero_ix) = 1/2;
+Pygx(:, col_zero_ix) = 1/101;
 find(Pygx < 0.001) = 0;
 
 % draw the contour
-contour(x, y, Pygx, 20, 'Color', 'k');
+contour(x, y, Pygx, 20);
 

@@ -1,0 +1,31 @@
+%CPS527_HW2_Q2b
+clc;
+clear all;
+[train, test] = readMNISTDatabase('./data');
+cimg = code(train.image);
+rimg = code(cimg, size(train.image));
+[~, k] = unique(train.label);
+for i = 1 : size(k)
+    subplot(10, 2, 2 * i - 1 );
+    imshow(uint8(255) - train.image(:,:,k(i)));
+    subplot(10, 2, 2 * i);
+    imshow(uint8(255) - rimg(:,:,k(i)));
+end
+
+%CPS527_HW2_Q2c
+[ likelihood, prior ] = normalModel( cimg, train.label );
+
+%CPS527_HW2_Q2d
+[sample, slabel] = drawRandom(likelihood, prior, [28 28 64]);
+
+figure;
+for i = 1 : length(sample)
+    s = sprintf('should be %d', slabel(i));
+    subplot(8, 8, i);
+    imshow(uint8(255) - sample(:,:,i));
+    title(s);
+end
+
+%CPS527_HW2_Q2e
+[ v, delta ] = normalValue( cimg, likelihood.M(:,1), likelihood.S(:,1) );
+
