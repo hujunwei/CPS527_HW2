@@ -30,8 +30,7 @@ end
 [ v, delta ] = normalValue( cimg, likelihood.M(:,1), likelihood.S(:,1) );
 %CPS527_HW2_Q2f
 [ D ] = distances( likelihood );
-%CPS527_HW2_Q2g
-[ label ] = classify( test.image, likelihood, prior );
+%CPS
 
 
 

@@ -6,5 +6,6 @@ delta = sqrt(delta_square);
 v = (1 / ( (2 * pi) .^ (length(m) / 2)  * sqrt(prod(s) ) ) ) * exp(-0.5 * delta_square);
 
 
+z%
 end
 

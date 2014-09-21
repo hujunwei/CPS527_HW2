@@ -1,5 +1,7 @@
 %CPS527 HW2 Q1b
 % calculate intergrate
+clc;
+clear all;
 x = linspace(-0.1, 2.1, 201);
 y = linspace(0,1,101)';
 p = pXYa(x,y);
