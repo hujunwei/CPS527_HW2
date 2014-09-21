@@ -32,7 +32,8 @@ end
 [ D ] = distances( likelihood );
 %CPS527_HW2_Q2g
 [ label ] = classify( test.image, likelihood, prior );
-
+%CPS527_HW2_Q2h
+[ E, errorRate, pCgT ] = errorStats( label, test.label );
 
 
 

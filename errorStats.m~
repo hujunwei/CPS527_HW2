@@ -1,0 +1,22 @@
+function [ E, errorRate, pCgT ] = errorStats( computedLabel, trueLabel )
+
+E = zeros(10, 10);
+
+for i = 1 : length(computedLabel)
+    if (computedLabel(i) ~= trueLabel(i) )
+        E(trueLabel(i), computedLabel(i)) = E(trueLabel(i), computedLabel(i)) + 1;
+        errorRateCount = errorRateCount + 1;
+    end
+end
+
+
+
+errorRate = errorRateCount / length(computedLabel);
+
+pcE / length(computedLabel)
+
+
+
+
+end
+

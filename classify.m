@@ -9,7 +9,7 @@ end
 posteriorForAllDigits = likelihoodForAllDigits .* ( (prior) * ones(1, length(img)) );
 
 for i = 1 : length(img)
-    label(1,i) = find(posteriorForAllDigits(:,i) == max(posteriorForAllDigits(:,i)) );
+    label(1,i) = find(posteriorForAllDigits(:,i) == max(posteriorForAllDigits(:,i)) ) - 1;
 end
 
 end
